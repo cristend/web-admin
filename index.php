@@ -15,6 +15,8 @@ if (isset($_SESSION["user"])) {
             include_once "$_SERVER[DOCUMENT_ROOT]/view/admin/user.php";
         } elseif ($route == 'user_edit') {
             include_once "$_SERVER[DOCUMENT_ROOT]/view/admin/edit_profile.php";
+        } elseif ($route == 'product') {
+            include_once "$_SERVER[DOCUMENT_ROOT]/view/product/product.php";
         } else {
             // include_once "$_SERVER[DOCUMENT_ROOT]/view/product/product.php";
         }

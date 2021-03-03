@@ -28,7 +28,11 @@ function get_products(Products $model)
         $products = $products_status['data'];
         return $products;
     }
-    return "";
+    return [];
+}
+
+function remove_product(Products $model, $product_id){
+    return $model->remove($product_id);
 }
 
 function paging(Products $model, $page = 1)

@@ -35,8 +35,17 @@ class Products extends CRUD
     public function edit()
     {
     }
-    public function remove()
+    public function remove($id)
     {
+        $condition = $this->id . "=?";
+        $params = [$id];
+        try {
+            $this->delete($this->table, $condition, $params);
+        } catch (\Throwable $th) {
+            logError($th);
+            return false;
+        }
+        return true;
     }
     public function get_detail($id)
     {
@@ -54,6 +63,11 @@ class Products extends CRUD
         $products = $this->read_all($this->table);
         if ($products) {
             $products = $this->fetch_objects($this, $products);
+            $count = 0;
+            foreach ($products as $product) {
+                $products[$count]['variable'] = json_decode($product['variable'], true);
+                $count++;
+            }
             return return_success($products);
         }
         return return_fail();
