@@ -39,7 +39,7 @@ $products = get_products($product_model);
                 <h1>Product</h1>
             </div class="flex-box-2">
             <div>
-                <a><button class="btn btn-success" id="add-product">Add Product</button></a>
+                <a href="?route=add_product"><button class="btn btn-success" id="add-product">Add Product</button></a>
             </div>
         </div>
         <table class="table table-bordered tbl-cart">
@@ -84,16 +84,6 @@ $products = get_products($product_model);
                     $count = $count + 1;
                 }
                 ?>
-                <tr class="product-cart">
-                    <td class="cart-checkbox"><label><input class="check-all" type="checkbox"></label></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Total</td>
-                    <td id="total">0.00</td>
-                </tr>
             </tbody>
         </table>
     </div>

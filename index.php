@@ -17,6 +17,12 @@ if (isset($_SESSION["user"])) {
             include_once "$_SERVER[DOCUMENT_ROOT]/view/admin/edit_profile.php";
         } elseif ($route == 'product') {
             include_once "$_SERVER[DOCUMENT_ROOT]/view/product/product.php";
+        } elseif ($route == 'add_product') {
+            include_once "$_SERVER[DOCUMENT_ROOT]/view/product/add_product.php";
+        } elseif ($route == 'product_detail') {
+            include_once "$_SERVER[DOCUMENT_ROOT]/view/product/product_detail.php";
+        } elseif ($route == 'edit_product') {
+            include_once "$_SERVER[DOCUMENT_ROOT]/view/product/edit_product.php";
         } else {
             // include_once "$_SERVER[DOCUMENT_ROOT]/view/product/product.php";
         }

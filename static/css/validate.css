@@ -1,3 +1,7 @@
 #add-admin-form .error {
   color: #ff0000;
 }
+
+#add-product-form .error {
+  color: #ff0000;
+}

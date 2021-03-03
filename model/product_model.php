@@ -4,6 +4,11 @@ include_once "$_SERVER[DOCUMENT_ROOT]/model/base/construct.php";
 
 $product_model = new Products($conn);
 
+function add_product(Products $model, $data)
+{
+    $model->add($data);
+}
+
 function get_product(string $id, Products $model)
 {
     $product_status = $model->get_detail($id);
@@ -31,7 +36,8 @@ function get_products(Products $model)
     return [];
 }
 
-function remove_product(Products $model, $product_id){
+function remove_product(Products $model, $product_id)
+{
     return $model->remove($product_id);
 }
 
