@@ -65,8 +65,8 @@ $users = get_users($user_model);
                     ?>
                         <tr id="user<?php echo $user["id"]; ?>">
                             <th scope="col"><?php echo $count; ?></th>
-                            <th scope="col"><a href="?user_profile&&id=<?php echo $user["id"] ?>"><?php echo $user["id"]; ?></a></th>
-                            <th scope="col"><a href="?user_profile&&id=<?php echo $user["id"] ?>"><?php echo $user["email"]; ?></a></th>
+                            <th scope="col"><a href="?route=user_profile&&id=<?php echo $user["id"] ?>"><?php echo $user["id"]; ?></a></th>
+                            <th scope="col"><a href="?route=user_profile&&id=<?php echo $user["id"] ?>"><?php echo $user["email"]; ?></a></th>
                             <th scope="col"><?php echo $user["name"]; ?></th>
                             <th scope="col"><?php
                                             if ($user["permission"] == "0") {

@@ -11,6 +11,10 @@ if (isset($_SESSION["user"])) {
         $route = $_GET['route'];
         if ($route == 'add_user') {
             include_once "$_SERVER[DOCUMENT_ROOT]/view/admin/add_user.php";
+        } elseif ($route == 'user_profile') {
+            include_once "$_SERVER[DOCUMENT_ROOT]/view/admin/user.php";
+        } elseif ($route == 'user_edit') {
+            include_once "$_SERVER[DOCUMENT_ROOT]/view/admin/edit_profile.php";
         } else {
             // include_once "$_SERVER[DOCUMENT_ROOT]/view/product/product.php";
         }
