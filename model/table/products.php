@@ -32,8 +32,21 @@ class Products extends CRUD
         $this->create_one($this->table, $data);
         return return_success();
     }
-    public function edit()
+    public function edit(array $array, $id)
     {
+        $data = [];
+        $data[$this->title] = $array['title'];
+        $data[$this->price] = $array['price'];
+        $data[$this->variable] = $array['variable'];
+        $data[$this->quantity] = $array['quantity'];
+        $data[$this->detail] = $array['detail'];
+        $data[$this->image] = $array['image'];
+
+        $data = clean_array($data);
+        $condition = $this->id . "=?";
+        $params = [$id];
+        $this->update($this->table, $data, $condition, $params);
+        return return_success();
     }
     public function remove($id)
     {
@@ -72,6 +85,7 @@ class Products extends CRUD
         }
         return return_fail();
     }
+
     public function get_page($limit, $offset = 0)
     {
         $pages = $this->read_page($this->table, $limit, $offset);

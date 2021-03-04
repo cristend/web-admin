@@ -5,3 +5,7 @@
 #add-product-form .error {
   color: #ff0000;
 }
+
+#edit-product-form .error {
+  color: #ff0000;
+}

@@ -35,7 +35,10 @@ function get_products(Products $model)
     }
     return [];
 }
-
+function edit_product(Products $model, $product_id, array $data)
+{
+    $model->edit($data, $product_id);
+}
 function remove_product(Products $model, $product_id)
 {
     return $model->remove($product_id);
